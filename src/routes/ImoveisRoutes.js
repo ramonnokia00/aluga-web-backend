@@ -4,9 +4,10 @@ const imoveisController = require("../controller/ImoveisControler");
 
 // Buscar imóveis com filtros (GET /imoveis?cidade=...&tipo=...&quartos=...)
 router.get("/", async (req, res) => {
-    const filtros = req.query;
-    const resultado = await imoveisController.buscarImoveis(filtros);
-    res.json(resultado);
+    // const filtros = req.query;
+    // const resultado = await imoveisController.buscarImoveis(filtros);
+    // res.json(resultado);
+    res.send(await imoveisController.teste())
 });
 
 // Buscar um imóvel pelo ID (GET /imoveis/:id)
