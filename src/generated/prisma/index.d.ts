@@ -2093,7 +2093,7 @@ export namespace Prisma {
     imovel_imagem: string | null
     imovel_area: number | null
     imovel_contato1: string | null
-    imovel_contado2: string | null
+    imovel_contato2: string | null
   }
 
   export type ImoveisMaxAggregateOutputType = {
@@ -2116,7 +2116,7 @@ export namespace Prisma {
     imovel_imagem: string | null
     imovel_area: number | null
     imovel_contato1: string | null
-    imovel_contado2: string | null
+    imovel_contato2: string | null
   }
 
   export type ImoveisCountAggregateOutputType = {
@@ -2139,7 +2139,7 @@ export namespace Prisma {
     imovel_imagem: number
     imovel_area: number
     imovel_contato1: number
-    imovel_contado2: number
+    imovel_contato2: number
     _all: number
   }
 
@@ -2184,7 +2184,7 @@ export namespace Prisma {
     imovel_imagem?: true
     imovel_area?: true
     imovel_contato1?: true
-    imovel_contado2?: true
+    imovel_contato2?: true
   }
 
   export type ImoveisMaxAggregateInputType = {
@@ -2207,7 +2207,7 @@ export namespace Prisma {
     imovel_imagem?: true
     imovel_area?: true
     imovel_contato1?: true
-    imovel_contado2?: true
+    imovel_contato2?: true
   }
 
   export type ImoveisCountAggregateInputType = {
@@ -2230,7 +2230,7 @@ export namespace Prisma {
     imovel_imagem?: true
     imovel_area?: true
     imovel_contato1?: true
-    imovel_contado2?: true
+    imovel_contato2?: true
     _all?: true
   }
 
@@ -2340,7 +2340,7 @@ export namespace Prisma {
     imovel_imagem: string
     imovel_area: number
     imovel_contato1: string
-    imovel_contado2: string | null
+    imovel_contato2: string | null
     _count: ImoveisCountAggregateOutputType | null
     _avg: ImoveisAvgAggregateOutputType | null
     _sum: ImoveisSumAggregateOutputType | null
@@ -2382,7 +2382,7 @@ export namespace Prisma {
     imovel_imagem?: boolean
     imovel_area?: boolean
     imovel_contato1?: boolean
-    imovel_contado2?: boolean
+    imovel_contato2?: boolean
     favoritos?: boolean | imoveis$favoritosArgs<ExtArgs>
     _count?: boolean | ImoveisCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["imoveis"]>
@@ -2409,10 +2409,10 @@ export namespace Prisma {
     imovel_imagem?: boolean
     imovel_area?: boolean
     imovel_contato1?: boolean
-    imovel_contado2?: boolean
+    imovel_contato2?: boolean
   }
 
-  export type imoveisOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"imovel_id" | "imovel_estado" | "imovel_cidade" | "imovel_bairro" | "imovel_logradouro" | "imovel_numero" | "imovel_complemento" | "imovel_cep" | "imovel_tipo" | "imovel_modalidade" | "imovel_valor" | "imovel_valor_condominio" | "imovel_descricao" | "imovel_quartos" | "imovel_garagens" | "imovel_banheiros" | "imovel_imagem" | "imovel_area" | "imovel_contato1" | "imovel_contado2", ExtArgs["result"]["imoveis"]>
+  export type imoveisOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"imovel_id" | "imovel_estado" | "imovel_cidade" | "imovel_bairro" | "imovel_logradouro" | "imovel_numero" | "imovel_complemento" | "imovel_cep" | "imovel_tipo" | "imovel_modalidade" | "imovel_valor" | "imovel_valor_condominio" | "imovel_descricao" | "imovel_quartos" | "imovel_garagens" | "imovel_banheiros" | "imovel_imagem" | "imovel_area" | "imovel_contato1" | "imovel_contato2", ExtArgs["result"]["imoveis"]>
   export type imoveisInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     favoritos?: boolean | imoveis$favoritosArgs<ExtArgs>
     _count?: boolean | ImoveisCountOutputTypeDefaultArgs<ExtArgs>
@@ -2443,7 +2443,7 @@ export namespace Prisma {
       imovel_imagem: string
       imovel_area: number
       imovel_contato1: string
-      imovel_contado2: string | null
+      imovel_contato2: string | null
     }, ExtArgs["result"]["imoveis"]>
     composites: {}
   }
@@ -2833,7 +2833,7 @@ export namespace Prisma {
     readonly imovel_imagem: FieldRef<"imoveis", 'String'>
     readonly imovel_area: FieldRef<"imoveis", 'Int'>
     readonly imovel_contato1: FieldRef<"imoveis", 'String'>
-    readonly imovel_contado2: FieldRef<"imoveis", 'String'>
+    readonly imovel_contato2: FieldRef<"imoveis", 'String'>
   }
     
 
@@ -4295,7 +4295,7 @@ export namespace Prisma {
     imovel_imagem: 'imovel_imagem',
     imovel_area: 'imovel_area',
     imovel_contato1: 'imovel_contato1',
-    imovel_contado2: 'imovel_contado2'
+    imovel_contato2: 'imovel_contato2'
   };
 
   export type ImoveisScalarFieldEnum = (typeof ImoveisScalarFieldEnum)[keyof typeof ImoveisScalarFieldEnum]
@@ -4345,7 +4345,7 @@ export namespace Prisma {
     imovel_descricao: 'imovel_descricao',
     imovel_imagem: 'imovel_imagem',
     imovel_contato1: 'imovel_contato1',
-    imovel_contado2: 'imovel_contado2'
+    imovel_contato2: 'imovel_contato2'
   };
 
   export type imoveisOrderByRelevanceFieldEnum = (typeof imoveisOrderByRelevanceFieldEnum)[keyof typeof imoveisOrderByRelevanceFieldEnum]
@@ -4467,7 +4467,7 @@ export namespace Prisma {
     imovel_imagem?: StringFilter<"imoveis"> | string
     imovel_area?: IntFilter<"imoveis"> | number
     imovel_contato1?: StringFilter<"imoveis"> | string
-    imovel_contado2?: StringNullableFilter<"imoveis"> | string | null
+    imovel_contato2?: StringNullableFilter<"imoveis"> | string | null
     favoritos?: FavoritosListRelationFilter
   }
 
@@ -4491,7 +4491,7 @@ export namespace Prisma {
     imovel_imagem?: SortOrder
     imovel_area?: SortOrder
     imovel_contato1?: SortOrder
-    imovel_contado2?: SortOrderInput | SortOrder
+    imovel_contato2?: SortOrderInput | SortOrder
     favoritos?: favoritosOrderByRelationAggregateInput
     _relevance?: imoveisOrderByRelevanceInput
   }
@@ -4519,7 +4519,7 @@ export namespace Prisma {
     imovel_imagem?: StringFilter<"imoveis"> | string
     imovel_area?: IntFilter<"imoveis"> | number
     imovel_contato1?: StringFilter<"imoveis"> | string
-    imovel_contado2?: StringNullableFilter<"imoveis"> | string | null
+    imovel_contato2?: StringNullableFilter<"imoveis"> | string | null
     favoritos?: FavoritosListRelationFilter
   }, "imovel_id" | "imovel_id">
 
@@ -4543,7 +4543,7 @@ export namespace Prisma {
     imovel_imagem?: SortOrder
     imovel_area?: SortOrder
     imovel_contato1?: SortOrder
-    imovel_contado2?: SortOrderInput | SortOrder
+    imovel_contato2?: SortOrderInput | SortOrder
     _count?: imoveisCountOrderByAggregateInput
     _avg?: imoveisAvgOrderByAggregateInput
     _max?: imoveisMaxOrderByAggregateInput
@@ -4574,7 +4574,7 @@ export namespace Prisma {
     imovel_imagem?: StringWithAggregatesFilter<"imoveis"> | string
     imovel_area?: IntWithAggregatesFilter<"imoveis"> | number
     imovel_contato1?: StringWithAggregatesFilter<"imoveis"> | string
-    imovel_contado2?: StringNullableWithAggregatesFilter<"imoveis"> | string | null
+    imovel_contato2?: StringNullableWithAggregatesFilter<"imoveis"> | string | null
   }
 
   export type usuariosWhereInput = {
@@ -4712,7 +4712,7 @@ export namespace Prisma {
     imovel_imagem: string
     imovel_area: number
     imovel_contato1: string
-    imovel_contado2?: string | null
+    imovel_contato2?: string | null
     favoritos?: favoritosCreateNestedManyWithoutImoveisInput
   }
 
@@ -4736,7 +4736,7 @@ export namespace Prisma {
     imovel_imagem: string
     imovel_area: number
     imovel_contato1: string
-    imovel_contado2?: string | null
+    imovel_contato2?: string | null
     favoritos?: favoritosUncheckedCreateNestedManyWithoutImoveisInput
   }
 
@@ -4759,7 +4759,7 @@ export namespace Prisma {
     imovel_imagem?: StringFieldUpdateOperationsInput | string
     imovel_area?: IntFieldUpdateOperationsInput | number
     imovel_contato1?: StringFieldUpdateOperationsInput | string
-    imovel_contado2?: NullableStringFieldUpdateOperationsInput | string | null
+    imovel_contato2?: NullableStringFieldUpdateOperationsInput | string | null
     favoritos?: favoritosUpdateManyWithoutImoveisNestedInput
   }
 
@@ -4783,7 +4783,7 @@ export namespace Prisma {
     imovel_imagem?: StringFieldUpdateOperationsInput | string
     imovel_area?: IntFieldUpdateOperationsInput | number
     imovel_contato1?: StringFieldUpdateOperationsInput | string
-    imovel_contado2?: NullableStringFieldUpdateOperationsInput | string | null
+    imovel_contato2?: NullableStringFieldUpdateOperationsInput | string | null
     favoritos?: favoritosUncheckedUpdateManyWithoutImoveisNestedInput
   }
 
@@ -4807,7 +4807,7 @@ export namespace Prisma {
     imovel_imagem: string
     imovel_area: number
     imovel_contato1: string
-    imovel_contado2?: string | null
+    imovel_contato2?: string | null
   }
 
   export type imoveisUpdateManyMutationInput = {
@@ -4829,7 +4829,7 @@ export namespace Prisma {
     imovel_imagem?: StringFieldUpdateOperationsInput | string
     imovel_area?: IntFieldUpdateOperationsInput | number
     imovel_contato1?: StringFieldUpdateOperationsInput | string
-    imovel_contado2?: NullableStringFieldUpdateOperationsInput | string | null
+    imovel_contato2?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type imoveisUncheckedUpdateManyInput = {
@@ -4852,7 +4852,7 @@ export namespace Prisma {
     imovel_imagem?: StringFieldUpdateOperationsInput | string
     imovel_area?: IntFieldUpdateOperationsInput | number
     imovel_contato1?: StringFieldUpdateOperationsInput | string
-    imovel_contado2?: NullableStringFieldUpdateOperationsInput | string | null
+    imovel_contato2?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type usuariosCreateInput = {
@@ -5100,7 +5100,7 @@ export namespace Prisma {
     imovel_imagem?: SortOrder
     imovel_area?: SortOrder
     imovel_contato1?: SortOrder
-    imovel_contado2?: SortOrder
+    imovel_contato2?: SortOrder
   }
 
   export type imoveisAvgOrderByAggregateInput = {
@@ -5133,7 +5133,7 @@ export namespace Prisma {
     imovel_imagem?: SortOrder
     imovel_area?: SortOrder
     imovel_contato1?: SortOrder
-    imovel_contado2?: SortOrder
+    imovel_contato2?: SortOrder
   }
 
   export type imoveisMinOrderByAggregateInput = {
@@ -5156,7 +5156,7 @@ export namespace Prisma {
     imovel_imagem?: SortOrder
     imovel_area?: SortOrder
     imovel_contato1?: SortOrder
-    imovel_contado2?: SortOrder
+    imovel_contato2?: SortOrder
   }
 
   export type imoveisSumOrderByAggregateInput = {
@@ -5636,7 +5636,7 @@ export namespace Prisma {
     imovel_imagem: string
     imovel_area: number
     imovel_contato1: string
-    imovel_contado2?: string | null
+    imovel_contato2?: string | null
   }
 
   export type imoveisUncheckedCreateWithoutFavoritosInput = {
@@ -5659,7 +5659,7 @@ export namespace Prisma {
     imovel_imagem: string
     imovel_area: number
     imovel_contato1: string
-    imovel_contado2?: string | null
+    imovel_contato2?: string | null
   }
 
   export type imoveisCreateOrConnectWithoutFavoritosInput = {
@@ -5731,7 +5731,7 @@ export namespace Prisma {
     imovel_imagem?: StringFieldUpdateOperationsInput | string
     imovel_area?: IntFieldUpdateOperationsInput | number
     imovel_contato1?: StringFieldUpdateOperationsInput | string
-    imovel_contado2?: NullableStringFieldUpdateOperationsInput | string | null
+    imovel_contato2?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type imoveisUncheckedUpdateWithoutFavoritosInput = {
@@ -5754,7 +5754,7 @@ export namespace Prisma {
     imovel_imagem?: StringFieldUpdateOperationsInput | string
     imovel_area?: IntFieldUpdateOperationsInput | number
     imovel_contato1?: StringFieldUpdateOperationsInput | string
-    imovel_contado2?: NullableStringFieldUpdateOperationsInput | string | null
+    imovel_contato2?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type favoritosCreateWithoutImoveisInput = {

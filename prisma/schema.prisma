@@ -39,7 +39,7 @@ model imoveis {
   imovel_imagem           String      @db.VarChar(255)
   imovel_area             Int
   imovel_contato1         String      @db.VarChar(15)
-  imovel_contado2         String?     @db.VarChar(15)
+  imovel_contato2         String?     @db.VarChar(15)
   favoritos               favoritos[]
 }
 

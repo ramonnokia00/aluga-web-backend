@@ -7,17 +7,24 @@ const prisma = new PrismaClient();
  */
 async function buscarImoveis(filtros = {}) {
     try {
+        console.log('Filtros recebidos:', filtros); // Adicione este log para depuração
         const where = {};
 
-        if (filtros.cidade) where.cidade = filtros.cidade;
-        if (filtros.tipo) where.tipo = filtros.tipo; // Ex: 'Casa' ou 'Apartamento'
-        if (filtros.quartos) where.quartos = { gte: filtros.quartos };
-        if (filtros.banheiros) where.banheiros = { gte: filtros.banheiros };
-        if (filtros.garagens) where.garagens = { gte: filtros.garagens };
+        if (filtros.imovel_cidade) where.imovel_cidade = filtros.imovel_cidade;
+        if (filtros.imovel_tipo) where.imovel_tipo = filtros.imovel_tipo;
+        if (
+            filtros.imovel_quartos !== undefined &&
+            filtros.imovel_quartos !== "" &&
+            !isNaN(Number(filtros.imovel_quartos))
+        ) {
+            where.imovel_quartos = Number(filtros.imovel_quartos);
+        }
+        if (filtros.imovel_banheiros) where.imovel_banheiros = { gte: Number(filtros.imovel_banheiros) };
+        if (filtros.imovel_garagens) where.imovel_garagens = { gte: Number(filtros.imovel_garagens) };
         if (filtros.precoMin || filtros.precoMax) {
-            where.preco = {};
-            if (filtros.precoMin) where.preco.gte = filtros.precoMin;
-            if (filtros.precoMax) where.preco.lte = filtros.precoMax;
+            where.imovel_valor = {};
+            if (filtros.precoMin) where.imovel_valor.gte = Number(filtros.precoMin);
+            if (filtros.precoMax) where.imovel_valor.lte = Number(filtros.precoMax);
         }
 
         return await prisma.imoveis.findMany({ where });
@@ -26,7 +33,7 @@ async function buscarImoveis(filtros = {}) {
             tipo: "error",
             mensagem: error.message
         };
-    };
+    }
 }
 
 // Busca um imóvel pelo ID
