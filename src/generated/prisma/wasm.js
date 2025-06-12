@@ -120,89 +120,9 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
-exports.Prisma.FavoritosScalarFieldEnum = {
-  favorito_id: 'favorito_id',
-  usuario_id: 'usuario_id',
-  imovel_id: 'imovel_id'
-};
-
-exports.Prisma.ImoveisScalarFieldEnum = {
-  imovel_id: 'imovel_id',
-  imovel_estado: 'imovel_estado',
-  imovel_cidade: 'imovel_cidade',
-  imovel_bairro: 'imovel_bairro',
-  imovel_logradouro: 'imovel_logradouro',
-  imovel_numero: 'imovel_numero',
-  imovel_complemento: 'imovel_complemento',
-  imovel_cep: 'imovel_cep',
-  imovel_tipo: 'imovel_tipo',
-  imovel_modalidade: 'imovel_modalidade',
-  imovel_valor: 'imovel_valor',
-  imovel_valor_condominio: 'imovel_valor_condominio',
-  imovel_descricao: 'imovel_descricao',
-  imovel_quartos: 'imovel_quartos',
-  imovel_garagens: 'imovel_garagens',
-  imovel_banheiros: 'imovel_banheiros',
-  imovel_imagem: 'imovel_imagem',
-  imovel_area: 'imovel_area',
-  imovel_contato1: 'imovel_contato1',
-  imovel_contado2: 'imovel_contado2'
-};
-
-exports.Prisma.UsuariosScalarFieldEnum = {
-  usuario_id: 'usuario_id',
-  usuario_nome: 'usuario_nome',
-  Usuario_email: 'Usuario_email',
-  usuario_telefone: 'usuario_telefone',
-  usuario_senha: 'usuario_senha',
-  usuario_cpf: 'usuario_cpf',
-  usuario_nivel: 'usuario_nivel',
-  usuario_nascimento: 'usuario_nascimento',
-  usuario_imagem: 'usuario_imagem'
-};
-
-exports.Prisma.SortOrder = {
-  asc: 'asc',
-  desc: 'desc'
-};
-
-exports.Prisma.NullsOrder = {
-  first: 'first',
-  last: 'last'
-};
-
-exports.Prisma.imoveisOrderByRelevanceFieldEnum = {
-  imovel_estado: 'imovel_estado',
-  imovel_cidade: 'imovel_cidade',
-  imovel_bairro: 'imovel_bairro',
-  imovel_logradouro: 'imovel_logradouro',
-  imovel_numero: 'imovel_numero',
-  imovel_complemento: 'imovel_complemento',
-  imovel_cep: 'imovel_cep',
-  imovel_tipo: 'imovel_tipo',
-  imovel_modalidade: 'imovel_modalidade',
-  imovel_descricao: 'imovel_descricao',
-  imovel_imagem: 'imovel_imagem',
-  imovel_contato1: 'imovel_contato1',
-  imovel_contado2: 'imovel_contado2'
-};
-
-exports.Prisma.usuariosOrderByRelevanceFieldEnum = {
-  usuario_nome: 'usuario_nome',
-  Usuario_email: 'Usuario_email',
-  usuario_telefone: 'usuario_telefone',
-  usuario_senha: 'usuario_senha',
-  usuario_cpf: 'usuario_cpf',
-  usuario_nivel: 'usuario_nivel',
-  usuario_nascimento: 'usuario_nascimento',
-  usuario_imagem: 'usuario_imagem'
-};
-
 
 exports.Prisma.ModelName = {
-  favoritos: 'favoritos',
-  imoveis: 'imoveis',
-  usuarios: 'usuarios'
+
 };
 
 /**

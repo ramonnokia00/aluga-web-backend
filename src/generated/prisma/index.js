@@ -93,89 +93,9 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
-exports.Prisma.FavoritosScalarFieldEnum = {
-  favorito_id: 'favorito_id',
-  usuario_id: 'usuario_id',
-  imovel_id: 'imovel_id'
-};
-
-exports.Prisma.ImoveisScalarFieldEnum = {
-  imovel_id: 'imovel_id',
-  imovel_estado: 'imovel_estado',
-  imovel_cidade: 'imovel_cidade',
-  imovel_bairro: 'imovel_bairro',
-  imovel_logradouro: 'imovel_logradouro',
-  imovel_numero: 'imovel_numero',
-  imovel_complemento: 'imovel_complemento',
-  imovel_cep: 'imovel_cep',
-  imovel_tipo: 'imovel_tipo',
-  imovel_modalidade: 'imovel_modalidade',
-  imovel_valor: 'imovel_valor',
-  imovel_valor_condominio: 'imovel_valor_condominio',
-  imovel_descricao: 'imovel_descricao',
-  imovel_quartos: 'imovel_quartos',
-  imovel_garagens: 'imovel_garagens',
-  imovel_banheiros: 'imovel_banheiros',
-  imovel_imagem: 'imovel_imagem',
-  imovel_area: 'imovel_area',
-  imovel_contato1: 'imovel_contato1',
-  imovel_contado2: 'imovel_contado2'
-};
-
-exports.Prisma.UsuariosScalarFieldEnum = {
-  usuario_id: 'usuario_id',
-  usuario_nome: 'usuario_nome',
-  Usuario_email: 'Usuario_email',
-  usuario_telefone: 'usuario_telefone',
-  usuario_senha: 'usuario_senha',
-  usuario_cpf: 'usuario_cpf',
-  usuario_nivel: 'usuario_nivel',
-  usuario_nascimento: 'usuario_nascimento',
-  usuario_imagem: 'usuario_imagem'
-};
-
-exports.Prisma.SortOrder = {
-  asc: 'asc',
-  desc: 'desc'
-};
-
-exports.Prisma.NullsOrder = {
-  first: 'first',
-  last: 'last'
-};
-
-exports.Prisma.imoveisOrderByRelevanceFieldEnum = {
-  imovel_estado: 'imovel_estado',
-  imovel_cidade: 'imovel_cidade',
-  imovel_bairro: 'imovel_bairro',
-  imovel_logradouro: 'imovel_logradouro',
-  imovel_numero: 'imovel_numero',
-  imovel_complemento: 'imovel_complemento',
-  imovel_cep: 'imovel_cep',
-  imovel_tipo: 'imovel_tipo',
-  imovel_modalidade: 'imovel_modalidade',
-  imovel_descricao: 'imovel_descricao',
-  imovel_imagem: 'imovel_imagem',
-  imovel_contato1: 'imovel_contato1',
-  imovel_contado2: 'imovel_contado2'
-};
-
-exports.Prisma.usuariosOrderByRelevanceFieldEnum = {
-  usuario_nome: 'usuario_nome',
-  Usuario_email: 'Usuario_email',
-  usuario_telefone: 'usuario_telefone',
-  usuario_senha: 'usuario_senha',
-  usuario_cpf: 'usuario_cpf',
-  usuario_nivel: 'usuario_nivel',
-  usuario_nascimento: 'usuario_nascimento',
-  usuario_imagem: 'usuario_imagem'
-};
-
 
 exports.Prisma.ModelName = {
-  favoritos: 'favoritos',
-  imoveis: 'imoveis',
-  usuarios: 'usuarios'
+
 };
 /**
  * Create the Client
@@ -188,7 +108,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\admin\\Documents\\EB DEV\\Trabalho\\aluga-web-backend\\generated\\prisma",
+      "value": "C:\\Users\\ramonsantos6053\\Documents\\aluga-web-backend\\src\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -202,19 +122,20 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\admin\\Documents\\EB DEV\\Trabalho\\aluga-web-backend\\prisma\\schema.prisma",
+    "sourceFilePath": "C:\\Users\\ramonsantos6053\\Documents\\aluga-web-backend\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null
+    "rootEnvPath": "../../../.env",
+    "schemaEnvPath": "../../../.env"
   },
-  "relativePath": "../../prisma",
+  "relativePath": "../../../prisma",
   "clientVersion": "6.9.0",
   "engineVersion": "81e4af48011447c3cc503a190e86995b66d2a28e",
   "datasourceNames": [
     "db"
   ],
-  "activeProvider": "mysql",
+  "activeProvider": "postgresql",
   "postinstall": false,
   "inlineDatasources": {
     "db": {
@@ -224,8 +145,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"mysql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel favoritos {\n  favorito_id Int      @id @unique(map: \"favorito_id\") @default(autoincrement())\n  usuario_id  Int\n  imovel_id   Int\n  usuarios    usuarios @relation(fields: [usuario_id], references: [usuario_id], onUpdate: Restrict, map: \"favoritos_fk1\")\n  imoveis     imoveis  @relation(fields: [imovel_id], references: [imovel_id], onUpdate: Restrict, map: \"favoritos_fk2\")\n\n  @@index([usuario_id], map: \"favoritos_fk1\")\n  @@index([imovel_id], map: \"favoritos_fk2\")\n}\n\nmodel imoveis {\n  imovel_id               Int         @id @unique(map: \"imovel_id\") @default(autoincrement())\n  imovel_estado           String      @db.VarChar(50)\n  imovel_cidade           String      @db.VarChar(50)\n  imovel_bairro           String      @db.VarChar(50)\n  imovel_logradouro       String      @db.VarChar(100)\n  imovel_numero           String      @db.VarChar(10)\n  imovel_complemento      String?     @db.VarChar(50)\n  imovel_cep              String      @db.VarChar(10)\n  imovel_tipo             String      @db.VarChar(20)\n  imovel_modalidade       String      @db.VarChar(20)\n  imovel_valor            Float       @db.Float\n  imovel_valor_condominio Float?      @db.Float\n  imovel_descricao        String      @db.Text\n  imovel_quartos          Int\n  imovel_garagens         Int\n  imovel_banheiros        Int\n  imovel_imagem           String      @db.VarChar(255)\n  imovel_area             Int\n  imovel_contato1         String      @db.VarChar(15)\n  imovel_contado2         String?     @db.VarChar(15)\n  favoritos               favoritos[]\n}\n\nmodel usuarios {\n  usuario_id         Int         @id @unique(map: \"usuario_id\") @default(autoincrement())\n  usuario_nome       String      @db.VarChar(100)\n  Usuario_email      String      @db.VarChar(100)\n  usuario_telefone   String      @db.VarChar(15)\n  usuario_senha      String      @db.VarChar(255)\n  usuario_cpf        String?     @db.VarChar(15)\n  usuario_nivel      String      @default(\"\\\"cliente\\\"\") @db.VarChar(15)\n  usuario_nascimento String      @db.VarChar(15)\n  usuario_imagem     String      @db.VarChar(255)\n  favoritos          favoritos[]\n}\n",
-  "inlineSchemaHash": "8225abe0de06c38d060caf11ef3a28cf8a3db1a8ceb00e12bff59b4f2599a961",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n",
+  "inlineSchemaHash": "f4defb510352aeb258e32fd0e4e744b44176032e921a554a415dd34c135bd53c",
   "copyEngine": true
 }
 
@@ -234,8 +155,8 @@ const fs = require('fs')
 config.dirname = __dirname
 if (!fs.existsSync(path.join(__dirname, 'schema.prisma'))) {
   const alternativePaths = [
+    "src/generated/prisma",
     "generated/prisma",
-    "prisma",
   ]
   
   const alternativePath = alternativePaths.find((altPath) => {
@@ -246,7 +167,7 @@ if (!fs.existsSync(path.join(__dirname, 'schema.prisma'))) {
   config.isBundled = true
 }
 
-config.runtimeDataModel = JSON.parse("{\"models\":{\"favoritos\":{\"dbName\":null,\"schema\":null,\"fields\":[{\"name\":\"favorito_id\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":true,\"isReadOnly\":false,\"hasDefaultValue\":true,\"type\":\"Int\",\"nativeType\":null,\"default\":{\"name\":\"autoincrement\",\"args\":[]},\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"usuario_id\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":true,\"hasDefaultValue\":false,\"type\":\"Int\",\"nativeType\":null,\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"imovel_id\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":true,\"hasDefaultValue\":false,\"type\":\"Int\",\"nativeType\":null,\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"usuarios\",\"kind\":\"object\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"usuarios\",\"nativeType\":null,\"relationName\":\"favoritosTousuarios\",\"relationFromFields\":[\"usuario_id\"],\"relationToFields\":[\"usuario_id\"],\"relationOnUpdate\":\"Restrict\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"imoveis\",\"kind\":\"object\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"imoveis\",\"nativeType\":null,\"relationName\":\"favoritosToimoveis\",\"relationFromFields\":[\"imovel_id\"],\"relationToFields\":[\"imovel_id\"],\"relationOnUpdate\":\"Restrict\",\"isGenerated\":false,\"isUpdatedAt\":false}],\"primaryKey\":null,\"uniqueFields\":[],\"uniqueIndexes\":[],\"isGenerated\":false},\"imoveis\":{\"dbName\":null,\"schema\":null,\"fields\":[{\"name\":\"imovel_id\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":true,\"isReadOnly\":false,\"hasDefaultValue\":true,\"type\":\"Int\",\"nativeType\":null,\"default\":{\"name\":\"autoincrement\",\"args\":[]},\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"imovel_estado\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":[\"VarChar\",[\"50\"]],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"imovel_cidade\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":[\"VarChar\",[\"50\"]],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"imovel_bairro\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":[\"VarChar\",[\"50\"]],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"imovel_logradouro\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":[\"VarChar\",[\"100\"]],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"imovel_numero\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":[\"VarChar\",[\"10\"]],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"imovel_complemento\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":false,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":[\"VarChar\",[\"50\"]],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"imovel_cep\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":[\"VarChar\",[\"10\"]],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"imovel_tipo\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":[\"VarChar\",[\"20\"]],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"imovel_modalidade\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":[\"VarChar\",[\"20\"]],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"imovel_valor\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Float\",\"nativeType\":[\"Float\",[]],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"imovel_valor_condominio\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":false,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Float\",\"nativeType\":[\"Float\",[]],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"imovel_descricao\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":[\"Text\",[]],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"imovel_quartos\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Int\",\"nativeType\":null,\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"imovel_garagens\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Int\",\"nativeType\":null,\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"imovel_banheiros\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Int\",\"nativeType\":null,\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"imovel_imagem\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":[\"VarChar\",[\"255\"]],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"imovel_area\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Int\",\"nativeType\":null,\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"imovel_contato1\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":[\"VarChar\",[\"15\"]],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"imovel_contado2\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":false,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":[\"VarChar\",[\"15\"]],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"favoritos\",\"kind\":\"object\",\"isList\":true,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"favoritos\",\"nativeType\":null,\"relationName\":\"favoritosToimoveis\",\"relationFromFields\":[],\"relationToFields\":[],\"isGenerated\":false,\"isUpdatedAt\":false}],\"primaryKey\":null,\"uniqueFields\":[],\"uniqueIndexes\":[],\"isGenerated\":false},\"usuarios\":{\"dbName\":null,\"schema\":null,\"fields\":[{\"name\":\"usuario_id\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":true,\"isReadOnly\":false,\"hasDefaultValue\":true,\"type\":\"Int\",\"nativeType\":null,\"default\":{\"name\":\"autoincrement\",\"args\":[]},\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"usuario_nome\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":[\"VarChar\",[\"100\"]],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"Usuario_email\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":[\"VarChar\",[\"100\"]],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"usuario_telefone\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":[\"VarChar\",[\"15\"]],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"usuario_senha\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":[\"VarChar\",[\"255\"]],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"usuario_cpf\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":false,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":[\"VarChar\",[\"15\"]],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"usuario_nivel\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":true,\"type\":\"String\",\"nativeType\":[\"VarChar\",[\"15\"]],\"default\":\"\\\"cliente\\\"\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"usuario_nascimento\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":[\"VarChar\",[\"15\"]],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"usuario_imagem\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":[\"VarChar\",[\"255\"]],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"favoritos\",\"kind\":\"object\",\"isList\":true,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"favoritos\",\"nativeType\":null,\"relationName\":\"favoritosTousuarios\",\"relationFromFields\":[],\"relationToFields\":[],\"isGenerated\":false,\"isUpdatedAt\":false}],\"primaryKey\":null,\"uniqueFields\":[],\"uniqueIndexes\":[],\"isGenerated\":false}},\"enums\":{},\"types\":{}}")
+config.runtimeDataModel = JSON.parse("{\"models\":{},\"enums\":{},\"types\":{}}")
 defineDmmfProperty(exports.Prisma, config.runtimeDataModel)
 config.engineWasm = undefined
 config.compilerWasm = undefined
@@ -265,7 +186,7 @@ Object.assign(exports, Prisma)
 
 // file annotations for bundling tools to include these files
 path.join(__dirname, "query_engine-windows.dll.node");
-path.join(process.cwd(), "generated/prisma/query_engine-windows.dll.node")
+path.join(process.cwd(), "src/generated/prisma/query_engine-windows.dll.node")
 // file annotations for bundling tools to include these files
 path.join(__dirname, "schema.prisma");
-path.join(process.cwd(), "generated/prisma/schema.prisma")
+path.join(process.cwd(), "src/generated/prisma/schema.prisma")
