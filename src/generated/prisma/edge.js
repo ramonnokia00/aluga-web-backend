@@ -187,7 +187,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\admin\\Documents\\EB DEV\\Trabalho\\aluga-web-backend\\generated\\prisma",
+      "value": "C:\\Users\\emmanuelpereira0471\\Documents\\aluga-web-backend\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -201,7 +201,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\admin\\Documents\\EB DEV\\Trabalho\\aluga-web-backend\\prisma\\schema.prisma",
+    "sourceFilePath": "C:\\Users\\emmanuelpereira0471\\Documents\\aluga-web-backend\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {

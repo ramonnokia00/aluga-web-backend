@@ -86,12 +86,17 @@ async function deletarImovel(id) {
     }
 }
 
+async function teste() {
+    return await prisma.imoveis.findMany()
+}
+
 module.exports = {
     buscarImoveis,
     buscarUmImovel,
     criarImovel,
     editarImovel,
-    deletarImovel
+    deletarImovel,
+    teste
 };
 
 
