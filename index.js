@@ -4,7 +4,7 @@ const port = 8000;
 
 const imoveisRoutes = require("./src/routes/ImoveisRoutes");
 
-
+const UsuariosRoutes = require("./src/routes/UsuarioRoutes")
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -12,6 +12,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/imoveis", imoveisRoutes);
+
+app.use("/usuarios", UsuariosRoutes);
 
 app.use((req, res) => {
     res.status(404).send("Rota nao encontrada")
