@@ -7,8 +7,8 @@ async function executarSQL(comandosql) {
         host: "localhost",
         user: "root",
         password: "1234",
-        port: "3307",
-        database: "aluga_web_backend",
+        port: "3306",
+        database: "aluga_web_frontend",
     });
     const [result] = await conexao.query(comandosql);
     conexao.end();
