@@ -18,8 +18,23 @@ async function buscarImoveis(filtros = {}) {
         ) {
             where.imovel_quartos = Number(filtros.imovel_quartos);
         }
-        if (filtros.imovel_banheiros) where.imovel_banheiros = { gte: Number(filtros.imovel_banheiros) };
-        if (filtros.imovel_garagens) where.imovel_garagens = { gte: Number(filtros.imovel_garagens) };
+
+        if (
+            filtros.imovel_banheiros !== undefined &&
+            filtros.imovel_banheiros !== "" &&
+            !isNaN(Number(filtros.imovel_banheiros))
+        ) {
+            where.imovel_banheiros = Number(filtros.imovel_banheiros);
+        }
+
+        if (
+            filtros.imovel_garagens !== undefined &&
+            filtros.imovel_garagens !== "" &&
+            !isNaN(Number(filtros.imovel_garagens))
+        ) {
+            where.imovel_garagens = Number(filtros.imovel_garagens);
+        }
+
         if (filtros.precoMin || filtros.precoMax) {
             where.imovel_valor = {};
             if (filtros.precoMin) where.imovel_valor.gte = Number(filtros.precoMin);
