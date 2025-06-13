@@ -1023,37 +1023,6 @@ export namespace Prisma {
 
 
   /**
-   * Count Type ImoveisCountOutputType
-   */
-
-  export type ImoveisCountOutputType = {
-    favoritos: number
-  }
-
-  export type ImoveisCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    favoritos?: boolean | ImoveisCountOutputTypeCountFavoritosArgs
-  }
-
-  // Custom InputTypes
-  /**
-   * ImoveisCountOutputType without action
-   */
-  export type ImoveisCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ImoveisCountOutputType
-     */
-    select?: ImoveisCountOutputTypeSelect<ExtArgs> | null
-  }
-
-  /**
-   * ImoveisCountOutputType without action
-   */
-  export type ImoveisCountOutputTypeCountFavoritosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: favoritosWhereInput
-  }
-
-
-  /**
    * Count Type UsuariosCountOutputType
    */
 
@@ -1279,7 +1248,6 @@ export namespace Prisma {
     usuario_id?: boolean
     imovel_id?: boolean
     usuarios?: boolean | usuariosDefaultArgs<ExtArgs>
-    imoveis?: boolean | imoveisDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["favoritos"]>
 
 
@@ -1293,14 +1261,12 @@ export namespace Prisma {
   export type favoritosOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"favorito_id" | "usuario_id" | "imovel_id", ExtArgs["result"]["favoritos"]>
   export type favoritosInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     usuarios?: boolean | usuariosDefaultArgs<ExtArgs>
-    imoveis?: boolean | imoveisDefaultArgs<ExtArgs>
   }
 
   export type $favoritosPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "favoritos"
     objects: {
       usuarios: Prisma.$usuariosPayload<ExtArgs>
-      imoveis: Prisma.$imoveisPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       favorito_id: number
@@ -1647,7 +1613,6 @@ export namespace Prisma {
   export interface Prisma__favoritosClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     usuarios<T extends usuariosDefaultArgs<ExtArgs> = {}>(args?: Subset<T, usuariosDefaultArgs<ExtArgs>>): Prisma__usuariosClient<$Result.GetResult<Prisma.$usuariosPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    imoveis<T extends imoveisDefaultArgs<ExtArgs> = {}>(args?: Subset<T, imoveisDefaultArgs<ExtArgs>>): Prisma__imoveisClient<$Result.GetResult<Prisma.$imoveisPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2383,8 +2348,6 @@ export namespace Prisma {
     imovel_area?: boolean
     imovel_contato1?: boolean
     imovel_contado2?: boolean
-    favoritos?: boolean | imoveis$favoritosArgs<ExtArgs>
-    _count?: boolean | ImoveisCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["imoveis"]>
 
 
@@ -2413,16 +2376,10 @@ export namespace Prisma {
   }
 
   export type imoveisOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"imovel_id" | "imovel_estado" | "imovel_cidade" | "imovel_bairro" | "imovel_logradouro" | "imovel_numero" | "imovel_complemento" | "imovel_cep" | "imovel_tipo" | "imovel_modalidade" | "imovel_valor" | "imovel_valor_condominio" | "imovel_descricao" | "imovel_quartos" | "imovel_garagens" | "imovel_banheiros" | "imovel_imagem" | "imovel_area" | "imovel_contato1" | "imovel_contado2", ExtArgs["result"]["imoveis"]>
-  export type imoveisInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    favoritos?: boolean | imoveis$favoritosArgs<ExtArgs>
-    _count?: boolean | ImoveisCountOutputTypeDefaultArgs<ExtArgs>
-  }
 
   export type $imoveisPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "imoveis"
-    objects: {
-      favoritos: Prisma.$favoritosPayload<ExtArgs>[]
-    }
+    objects: {}
     scalars: $Extensions.GetPayloadResult<{
       imovel_id: number
       imovel_estado: string
@@ -2784,7 +2741,6 @@ export namespace Prisma {
    */
   export interface Prisma__imoveisClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    favoritos<T extends imoveis$favoritosArgs<ExtArgs> = {}>(args?: Subset<T, imoveis$favoritosArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$favoritosPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2851,10 +2807,6 @@ export namespace Prisma {
      */
     omit?: imoveisOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: imoveisInclude<ExtArgs> | null
-    /**
      * Filter, which imoveis to fetch.
      */
     where: imoveisWhereUniqueInput
@@ -2873,10 +2825,6 @@ export namespace Prisma {
      */
     omit?: imoveisOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: imoveisInclude<ExtArgs> | null
-    /**
      * Filter, which imoveis to fetch.
      */
     where: imoveisWhereUniqueInput
@@ -2894,10 +2842,6 @@ export namespace Prisma {
      * Omit specific fields from the imoveis
      */
     omit?: imoveisOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: imoveisInclude<ExtArgs> | null
     /**
      * Filter, which imoveis to fetch.
      */
@@ -2947,10 +2891,6 @@ export namespace Prisma {
      */
     omit?: imoveisOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: imoveisInclude<ExtArgs> | null
-    /**
      * Filter, which imoveis to fetch.
      */
     where?: imoveisWhereInput
@@ -2999,10 +2939,6 @@ export namespace Prisma {
      */
     omit?: imoveisOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: imoveisInclude<ExtArgs> | null
-    /**
      * Filter, which imoveis to fetch.
      */
     where?: imoveisWhereInput
@@ -3046,10 +2982,6 @@ export namespace Prisma {
      */
     omit?: imoveisOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: imoveisInclude<ExtArgs> | null
-    /**
      * The data needed to create a imoveis.
      */
     data: XOR<imoveisCreateInput, imoveisUncheckedCreateInput>
@@ -3078,10 +3010,6 @@ export namespace Prisma {
      * Omit specific fields from the imoveis
      */
     omit?: imoveisOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: imoveisInclude<ExtArgs> | null
     /**
      * The data needed to update a imoveis.
      */
@@ -3123,10 +3051,6 @@ export namespace Prisma {
      */
     omit?: imoveisOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: imoveisInclude<ExtArgs> | null
-    /**
      * The filter to search for the imoveis to update in case it exists.
      */
     where: imoveisWhereUniqueInput
@@ -3153,10 +3077,6 @@ export namespace Prisma {
      */
     omit?: imoveisOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: imoveisInclude<ExtArgs> | null
-    /**
      * Filter which imoveis to delete.
      */
     where: imoveisWhereUniqueInput
@@ -3177,30 +3097,6 @@ export namespace Prisma {
   }
 
   /**
-   * imoveis.favoritos
-   */
-  export type imoveis$favoritosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the favoritos
-     */
-    select?: favoritosSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the favoritos
-     */
-    omit?: favoritosOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: favoritosInclude<ExtArgs> | null
-    where?: favoritosWhereInput
-    orderBy?: favoritosOrderByWithRelationInput | favoritosOrderByWithRelationInput[]
-    cursor?: favoritosWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: FavoritosScalarFieldEnum | FavoritosScalarFieldEnum[]
-  }
-
-  /**
    * imoveis without action
    */
   export type imoveisDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -3212,10 +3108,6 @@ export namespace Prisma {
      * Omit specific fields from the imoveis
      */
     omit?: imoveisOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: imoveisInclude<ExtArgs> | null
   }
 
 
@@ -4402,7 +4294,6 @@ export namespace Prisma {
     usuario_id?: IntFilter<"favoritos"> | number
     imovel_id?: IntFilter<"favoritos"> | number
     usuarios?: XOR<UsuariosScalarRelationFilter, usuariosWhereInput>
-    imoveis?: XOR<ImoveisScalarRelationFilter, imoveisWhereInput>
   }
 
   export type favoritosOrderByWithRelationInput = {
@@ -4410,7 +4301,6 @@ export namespace Prisma {
     usuario_id?: SortOrder
     imovel_id?: SortOrder
     usuarios?: usuariosOrderByWithRelationInput
-    imoveis?: imoveisOrderByWithRelationInput
   }
 
   export type favoritosWhereUniqueInput = Prisma.AtLeast<{
@@ -4421,7 +4311,6 @@ export namespace Prisma {
     usuario_id?: IntFilter<"favoritos"> | number
     imovel_id?: IntFilter<"favoritos"> | number
     usuarios?: XOR<UsuariosScalarRelationFilter, usuariosWhereInput>
-    imoveis?: XOR<ImoveisScalarRelationFilter, imoveisWhereInput>
   }, "favorito_id" | "favorito_id">
 
   export type favoritosOrderByWithAggregationInput = {
@@ -4468,7 +4357,6 @@ export namespace Prisma {
     imovel_area?: IntFilter<"imoveis"> | number
     imovel_contato1?: StringFilter<"imoveis"> | string
     imovel_contado2?: StringNullableFilter<"imoveis"> | string | null
-    favoritos?: FavoritosListRelationFilter
   }
 
   export type imoveisOrderByWithRelationInput = {
@@ -4492,7 +4380,6 @@ export namespace Prisma {
     imovel_area?: SortOrder
     imovel_contato1?: SortOrder
     imovel_contado2?: SortOrderInput | SortOrder
-    favoritos?: favoritosOrderByRelationAggregateInput
     _relevance?: imoveisOrderByRelevanceInput
   }
 
@@ -4520,7 +4407,6 @@ export namespace Prisma {
     imovel_area?: IntFilter<"imoveis"> | number
     imovel_contato1?: StringFilter<"imoveis"> | string
     imovel_contado2?: StringNullableFilter<"imoveis"> | string | null
-    favoritos?: FavoritosListRelationFilter
   }, "imovel_id" | "imovel_id">
 
   export type imoveisOrderByWithAggregationInput = {
@@ -4656,8 +4542,8 @@ export namespace Prisma {
   }
 
   export type favoritosCreateInput = {
+    imovel_id: number
     usuarios: usuariosCreateNestedOneWithoutFavoritosInput
-    imoveis: imoveisCreateNestedOneWithoutFavoritosInput
   }
 
   export type favoritosUncheckedCreateInput = {
@@ -4667,8 +4553,8 @@ export namespace Prisma {
   }
 
   export type favoritosUpdateInput = {
+    imovel_id?: IntFieldUpdateOperationsInput | number
     usuarios?: usuariosUpdateOneRequiredWithoutFavoritosNestedInput
-    imoveis?: imoveisUpdateOneRequiredWithoutFavoritosNestedInput
   }
 
   export type favoritosUncheckedUpdateInput = {
@@ -4684,7 +4570,7 @@ export namespace Prisma {
   }
 
   export type favoritosUpdateManyMutationInput = {
-
+    imovel_id?: IntFieldUpdateOperationsInput | number
   }
 
   export type favoritosUncheckedUpdateManyInput = {
@@ -4713,7 +4599,6 @@ export namespace Prisma {
     imovel_area: number
     imovel_contato1: string
     imovel_contado2?: string | null
-    favoritos?: favoritosCreateNestedManyWithoutImoveisInput
   }
 
   export type imoveisUncheckedCreateInput = {
@@ -4737,7 +4622,6 @@ export namespace Prisma {
     imovel_area: number
     imovel_contato1: string
     imovel_contado2?: string | null
-    favoritos?: favoritosUncheckedCreateNestedManyWithoutImoveisInput
   }
 
   export type imoveisUpdateInput = {
@@ -4760,7 +4644,6 @@ export namespace Prisma {
     imovel_area?: IntFieldUpdateOperationsInput | number
     imovel_contato1?: StringFieldUpdateOperationsInput | string
     imovel_contado2?: NullableStringFieldUpdateOperationsInput | string | null
-    favoritos?: favoritosUpdateManyWithoutImoveisNestedInput
   }
 
   export type imoveisUncheckedUpdateInput = {
@@ -4784,7 +4667,6 @@ export namespace Prisma {
     imovel_area?: IntFieldUpdateOperationsInput | number
     imovel_contato1?: StringFieldUpdateOperationsInput | string
     imovel_contado2?: NullableStringFieldUpdateOperationsInput | string | null
-    favoritos?: favoritosUncheckedUpdateManyWithoutImoveisNestedInput
   }
 
   export type imoveisCreateManyInput = {
@@ -4956,11 +4838,6 @@ export namespace Prisma {
     isNot?: usuariosWhereInput
   }
 
-  export type ImoveisScalarRelationFilter = {
-    is?: imoveisWhereInput
-    isNot?: imoveisWhereInput
-  }
-
   export type favoritosCountOrderByAggregateInput = {
     favorito_id?: SortOrder
     usuario_id?: SortOrder
@@ -5059,19 +4936,9 @@ export namespace Prisma {
     not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
-  export type FavoritosListRelationFilter = {
-    every?: favoritosWhereInput
-    some?: favoritosWhereInput
-    none?: favoritosWhereInput
-  }
-
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
-  }
-
-  export type favoritosOrderByRelationAggregateInput = {
-    _count?: SortOrder
   }
 
   export type imoveisOrderByRelevanceInput = {
@@ -5237,6 +5104,16 @@ export namespace Prisma {
     _max?: NestedFloatNullableFilter<$PrismaModel>
   }
 
+  export type FavoritosListRelationFilter = {
+    every?: favoritosWhereInput
+    some?: favoritosWhereInput
+    none?: favoritosWhereInput
+  }
+
+  export type favoritosOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
   export type usuariosOrderByRelevanceInput = {
     fields: usuariosOrderByRelevanceFieldEnum | usuariosOrderByRelevanceFieldEnum[]
     sort: SortOrder
@@ -5293,28 +5170,6 @@ export namespace Prisma {
     connect?: usuariosWhereUniqueInput
   }
 
-  export type imoveisCreateNestedOneWithoutFavoritosInput = {
-    create?: XOR<imoveisCreateWithoutFavoritosInput, imoveisUncheckedCreateWithoutFavoritosInput>
-    connectOrCreate?: imoveisCreateOrConnectWithoutFavoritosInput
-    connect?: imoveisWhereUniqueInput
-  }
-
-  export type usuariosUpdateOneRequiredWithoutFavoritosNestedInput = {
-    create?: XOR<usuariosCreateWithoutFavoritosInput, usuariosUncheckedCreateWithoutFavoritosInput>
-    connectOrCreate?: usuariosCreateOrConnectWithoutFavoritosInput
-    upsert?: usuariosUpsertWithoutFavoritosInput
-    connect?: usuariosWhereUniqueInput
-    update?: XOR<XOR<usuariosUpdateToOneWithWhereWithoutFavoritosInput, usuariosUpdateWithoutFavoritosInput>, usuariosUncheckedUpdateWithoutFavoritosInput>
-  }
-
-  export type imoveisUpdateOneRequiredWithoutFavoritosNestedInput = {
-    create?: XOR<imoveisCreateWithoutFavoritosInput, imoveisUncheckedCreateWithoutFavoritosInput>
-    connectOrCreate?: imoveisCreateOrConnectWithoutFavoritosInput
-    upsert?: imoveisUpsertWithoutFavoritosInput
-    connect?: imoveisWhereUniqueInput
-    update?: XOR<XOR<imoveisUpdateToOneWithWhereWithoutFavoritosInput, imoveisUpdateWithoutFavoritosInput>, imoveisUncheckedUpdateWithoutFavoritosInput>
-  }
-
   export type IntFieldUpdateOperationsInput = {
     set?: number
     increment?: number
@@ -5323,18 +5178,12 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type favoritosCreateNestedManyWithoutImoveisInput = {
-    create?: XOR<favoritosCreateWithoutImoveisInput, favoritosUncheckedCreateWithoutImoveisInput> | favoritosCreateWithoutImoveisInput[] | favoritosUncheckedCreateWithoutImoveisInput[]
-    connectOrCreate?: favoritosCreateOrConnectWithoutImoveisInput | favoritosCreateOrConnectWithoutImoveisInput[]
-    createMany?: favoritosCreateManyImoveisInputEnvelope
-    connect?: favoritosWhereUniqueInput | favoritosWhereUniqueInput[]
-  }
-
-  export type favoritosUncheckedCreateNestedManyWithoutImoveisInput = {
-    create?: XOR<favoritosCreateWithoutImoveisInput, favoritosUncheckedCreateWithoutImoveisInput> | favoritosCreateWithoutImoveisInput[] | favoritosUncheckedCreateWithoutImoveisInput[]
-    connectOrCreate?: favoritosCreateOrConnectWithoutImoveisInput | favoritosCreateOrConnectWithoutImoveisInput[]
-    createMany?: favoritosCreateManyImoveisInputEnvelope
-    connect?: favoritosWhereUniqueInput | favoritosWhereUniqueInput[]
+  export type usuariosUpdateOneRequiredWithoutFavoritosNestedInput = {
+    create?: XOR<usuariosCreateWithoutFavoritosInput, usuariosUncheckedCreateWithoutFavoritosInput>
+    connectOrCreate?: usuariosCreateOrConnectWithoutFavoritosInput
+    upsert?: usuariosUpsertWithoutFavoritosInput
+    connect?: usuariosWhereUniqueInput
+    update?: XOR<XOR<usuariosUpdateToOneWithWhereWithoutFavoritosInput, usuariosUpdateWithoutFavoritosInput>, usuariosUncheckedUpdateWithoutFavoritosInput>
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -5359,34 +5208,6 @@ export namespace Prisma {
     decrement?: number
     multiply?: number
     divide?: number
-  }
-
-  export type favoritosUpdateManyWithoutImoveisNestedInput = {
-    create?: XOR<favoritosCreateWithoutImoveisInput, favoritosUncheckedCreateWithoutImoveisInput> | favoritosCreateWithoutImoveisInput[] | favoritosUncheckedCreateWithoutImoveisInput[]
-    connectOrCreate?: favoritosCreateOrConnectWithoutImoveisInput | favoritosCreateOrConnectWithoutImoveisInput[]
-    upsert?: favoritosUpsertWithWhereUniqueWithoutImoveisInput | favoritosUpsertWithWhereUniqueWithoutImoveisInput[]
-    createMany?: favoritosCreateManyImoveisInputEnvelope
-    set?: favoritosWhereUniqueInput | favoritosWhereUniqueInput[]
-    disconnect?: favoritosWhereUniqueInput | favoritosWhereUniqueInput[]
-    delete?: favoritosWhereUniqueInput | favoritosWhereUniqueInput[]
-    connect?: favoritosWhereUniqueInput | favoritosWhereUniqueInput[]
-    update?: favoritosUpdateWithWhereUniqueWithoutImoveisInput | favoritosUpdateWithWhereUniqueWithoutImoveisInput[]
-    updateMany?: favoritosUpdateManyWithWhereWithoutImoveisInput | favoritosUpdateManyWithWhereWithoutImoveisInput[]
-    deleteMany?: favoritosScalarWhereInput | favoritosScalarWhereInput[]
-  }
-
-  export type favoritosUncheckedUpdateManyWithoutImoveisNestedInput = {
-    create?: XOR<favoritosCreateWithoutImoveisInput, favoritosUncheckedCreateWithoutImoveisInput> | favoritosCreateWithoutImoveisInput[] | favoritosUncheckedCreateWithoutImoveisInput[]
-    connectOrCreate?: favoritosCreateOrConnectWithoutImoveisInput | favoritosCreateOrConnectWithoutImoveisInput[]
-    upsert?: favoritosUpsertWithWhereUniqueWithoutImoveisInput | favoritosUpsertWithWhereUniqueWithoutImoveisInput[]
-    createMany?: favoritosCreateManyImoveisInputEnvelope
-    set?: favoritosWhereUniqueInput | favoritosWhereUniqueInput[]
-    disconnect?: favoritosWhereUniqueInput | favoritosWhereUniqueInput[]
-    delete?: favoritosWhereUniqueInput | favoritosWhereUniqueInput[]
-    connect?: favoritosWhereUniqueInput | favoritosWhereUniqueInput[]
-    update?: favoritosUpdateWithWhereUniqueWithoutImoveisInput | favoritosUpdateWithWhereUniqueWithoutImoveisInput[]
-    updateMany?: favoritosUpdateManyWithWhereWithoutImoveisInput | favoritosUpdateManyWithWhereWithoutImoveisInput[]
-    deleteMany?: favoritosScalarWhereInput | favoritosScalarWhereInput[]
   }
 
   export type favoritosCreateNestedManyWithoutUsuariosInput = {
@@ -5617,56 +5438,6 @@ export namespace Prisma {
     create: XOR<usuariosCreateWithoutFavoritosInput, usuariosUncheckedCreateWithoutFavoritosInput>
   }
 
-  export type imoveisCreateWithoutFavoritosInput = {
-    imovel_estado: string
-    imovel_cidade: string
-    imovel_bairro: string
-    imovel_logradouro: string
-    imovel_numero: string
-    imovel_complemento?: string | null
-    imovel_cep: string
-    imovel_tipo: string
-    imovel_modalidade: string
-    imovel_valor: number
-    imovel_valor_condominio?: number | null
-    imovel_descricao: string
-    imovel_quartos: number
-    imovel_garagens: number
-    imovel_banheiros: number
-    imovel_imagem: string
-    imovel_area: number
-    imovel_contato1: string
-    imovel_contado2?: string | null
-  }
-
-  export type imoveisUncheckedCreateWithoutFavoritosInput = {
-    imovel_id?: number
-    imovel_estado: string
-    imovel_cidade: string
-    imovel_bairro: string
-    imovel_logradouro: string
-    imovel_numero: string
-    imovel_complemento?: string | null
-    imovel_cep: string
-    imovel_tipo: string
-    imovel_modalidade: string
-    imovel_valor: number
-    imovel_valor_condominio?: number | null
-    imovel_descricao: string
-    imovel_quartos: number
-    imovel_garagens: number
-    imovel_banheiros: number
-    imovel_imagem: string
-    imovel_area: number
-    imovel_contato1: string
-    imovel_contado2?: string | null
-  }
-
-  export type imoveisCreateOrConnectWithoutFavoritosInput = {
-    where: imoveisWhereUniqueInput
-    create: XOR<imoveisCreateWithoutFavoritosInput, imoveisUncheckedCreateWithoutFavoritosInput>
-  }
-
   export type usuariosUpsertWithoutFavoritosInput = {
     update: XOR<usuariosUpdateWithoutFavoritosInput, usuariosUncheckedUpdateWithoutFavoritosInput>
     create: XOR<usuariosCreateWithoutFavoritosInput, usuariosUncheckedCreateWithoutFavoritosInput>
@@ -5701,108 +5472,8 @@ export namespace Prisma {
     usuario_imagem?: StringFieldUpdateOperationsInput | string
   }
 
-  export type imoveisUpsertWithoutFavoritosInput = {
-    update: XOR<imoveisUpdateWithoutFavoritosInput, imoveisUncheckedUpdateWithoutFavoritosInput>
-    create: XOR<imoveisCreateWithoutFavoritosInput, imoveisUncheckedCreateWithoutFavoritosInput>
-    where?: imoveisWhereInput
-  }
-
-  export type imoveisUpdateToOneWithWhereWithoutFavoritosInput = {
-    where?: imoveisWhereInput
-    data: XOR<imoveisUpdateWithoutFavoritosInput, imoveisUncheckedUpdateWithoutFavoritosInput>
-  }
-
-  export type imoveisUpdateWithoutFavoritosInput = {
-    imovel_estado?: StringFieldUpdateOperationsInput | string
-    imovel_cidade?: StringFieldUpdateOperationsInput | string
-    imovel_bairro?: StringFieldUpdateOperationsInput | string
-    imovel_logradouro?: StringFieldUpdateOperationsInput | string
-    imovel_numero?: StringFieldUpdateOperationsInput | string
-    imovel_complemento?: NullableStringFieldUpdateOperationsInput | string | null
-    imovel_cep?: StringFieldUpdateOperationsInput | string
-    imovel_tipo?: StringFieldUpdateOperationsInput | string
-    imovel_modalidade?: StringFieldUpdateOperationsInput | string
-    imovel_valor?: FloatFieldUpdateOperationsInput | number
-    imovel_valor_condominio?: NullableFloatFieldUpdateOperationsInput | number | null
-    imovel_descricao?: StringFieldUpdateOperationsInput | string
-    imovel_quartos?: IntFieldUpdateOperationsInput | number
-    imovel_garagens?: IntFieldUpdateOperationsInput | number
-    imovel_banheiros?: IntFieldUpdateOperationsInput | number
-    imovel_imagem?: StringFieldUpdateOperationsInput | string
-    imovel_area?: IntFieldUpdateOperationsInput | number
-    imovel_contato1?: StringFieldUpdateOperationsInput | string
-    imovel_contado2?: NullableStringFieldUpdateOperationsInput | string | null
-  }
-
-  export type imoveisUncheckedUpdateWithoutFavoritosInput = {
-    imovel_id?: IntFieldUpdateOperationsInput | number
-    imovel_estado?: StringFieldUpdateOperationsInput | string
-    imovel_cidade?: StringFieldUpdateOperationsInput | string
-    imovel_bairro?: StringFieldUpdateOperationsInput | string
-    imovel_logradouro?: StringFieldUpdateOperationsInput | string
-    imovel_numero?: StringFieldUpdateOperationsInput | string
-    imovel_complemento?: NullableStringFieldUpdateOperationsInput | string | null
-    imovel_cep?: StringFieldUpdateOperationsInput | string
-    imovel_tipo?: StringFieldUpdateOperationsInput | string
-    imovel_modalidade?: StringFieldUpdateOperationsInput | string
-    imovel_valor?: FloatFieldUpdateOperationsInput | number
-    imovel_valor_condominio?: NullableFloatFieldUpdateOperationsInput | number | null
-    imovel_descricao?: StringFieldUpdateOperationsInput | string
-    imovel_quartos?: IntFieldUpdateOperationsInput | number
-    imovel_garagens?: IntFieldUpdateOperationsInput | number
-    imovel_banheiros?: IntFieldUpdateOperationsInput | number
-    imovel_imagem?: StringFieldUpdateOperationsInput | string
-    imovel_area?: IntFieldUpdateOperationsInput | number
-    imovel_contato1?: StringFieldUpdateOperationsInput | string
-    imovel_contado2?: NullableStringFieldUpdateOperationsInput | string | null
-  }
-
-  export type favoritosCreateWithoutImoveisInput = {
-    usuarios: usuariosCreateNestedOneWithoutFavoritosInput
-  }
-
-  export type favoritosUncheckedCreateWithoutImoveisInput = {
-    favorito_id?: number
-    usuario_id: number
-  }
-
-  export type favoritosCreateOrConnectWithoutImoveisInput = {
-    where: favoritosWhereUniqueInput
-    create: XOR<favoritosCreateWithoutImoveisInput, favoritosUncheckedCreateWithoutImoveisInput>
-  }
-
-  export type favoritosCreateManyImoveisInputEnvelope = {
-    data: favoritosCreateManyImoveisInput | favoritosCreateManyImoveisInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type favoritosUpsertWithWhereUniqueWithoutImoveisInput = {
-    where: favoritosWhereUniqueInput
-    update: XOR<favoritosUpdateWithoutImoveisInput, favoritosUncheckedUpdateWithoutImoveisInput>
-    create: XOR<favoritosCreateWithoutImoveisInput, favoritosUncheckedCreateWithoutImoveisInput>
-  }
-
-  export type favoritosUpdateWithWhereUniqueWithoutImoveisInput = {
-    where: favoritosWhereUniqueInput
-    data: XOR<favoritosUpdateWithoutImoveisInput, favoritosUncheckedUpdateWithoutImoveisInput>
-  }
-
-  export type favoritosUpdateManyWithWhereWithoutImoveisInput = {
-    where: favoritosScalarWhereInput
-    data: XOR<favoritosUpdateManyMutationInput, favoritosUncheckedUpdateManyWithoutImoveisInput>
-  }
-
-  export type favoritosScalarWhereInput = {
-    AND?: favoritosScalarWhereInput | favoritosScalarWhereInput[]
-    OR?: favoritosScalarWhereInput[]
-    NOT?: favoritosScalarWhereInput | favoritosScalarWhereInput[]
-    favorito_id?: IntFilter<"favoritos"> | number
-    usuario_id?: IntFilter<"favoritos"> | number
-    imovel_id?: IntFilter<"favoritos"> | number
-  }
-
   export type favoritosCreateWithoutUsuariosInput = {
-    imoveis: imoveisCreateNestedOneWithoutFavoritosInput
+    imovel_id: number
   }
 
   export type favoritosUncheckedCreateWithoutUsuariosInput = {
@@ -5836,23 +5507,13 @@ export namespace Prisma {
     data: XOR<favoritosUpdateManyMutationInput, favoritosUncheckedUpdateManyWithoutUsuariosInput>
   }
 
-  export type favoritosCreateManyImoveisInput = {
-    favorito_id?: number
-    usuario_id: number
-  }
-
-  export type favoritosUpdateWithoutImoveisInput = {
-    usuarios?: usuariosUpdateOneRequiredWithoutFavoritosNestedInput
-  }
-
-  export type favoritosUncheckedUpdateWithoutImoveisInput = {
-    favorito_id?: IntFieldUpdateOperationsInput | number
-    usuario_id?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type favoritosUncheckedUpdateManyWithoutImoveisInput = {
-    favorito_id?: IntFieldUpdateOperationsInput | number
-    usuario_id?: IntFieldUpdateOperationsInput | number
+  export type favoritosScalarWhereInput = {
+    AND?: favoritosScalarWhereInput | favoritosScalarWhereInput[]
+    OR?: favoritosScalarWhereInput[]
+    NOT?: favoritosScalarWhereInput | favoritosScalarWhereInput[]
+    favorito_id?: IntFilter<"favoritos"> | number
+    usuario_id?: IntFilter<"favoritos"> | number
+    imovel_id?: IntFilter<"favoritos"> | number
   }
 
   export type favoritosCreateManyUsuariosInput = {
@@ -5861,7 +5522,7 @@ export namespace Prisma {
   }
 
   export type favoritosUpdateWithoutUsuariosInput = {
-    imoveis?: imoveisUpdateOneRequiredWithoutFavoritosNestedInput
+    imovel_id?: IntFieldUpdateOperationsInput | number
   }
 
   export type favoritosUncheckedUpdateWithoutUsuariosInput = {
