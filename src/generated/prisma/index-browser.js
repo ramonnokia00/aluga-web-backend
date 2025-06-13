@@ -146,13 +146,13 @@ exports.Prisma.ImoveisScalarFieldEnum = {
   imovel_imagem: 'imovel_imagem',
   imovel_area: 'imovel_area',
   imovel_contato1: 'imovel_contato1',
-  imovel_contado2: 'imovel_contado2'
+  imovel_contato2: 'imovel_contato2'
 };
 
 exports.Prisma.UsuariosScalarFieldEnum = {
   usuario_id: 'usuario_id',
   usuario_nome: 'usuario_nome',
-  Usuario_email: 'Usuario_email',
+  usuario_email: 'usuario_email',
   usuario_telefone: 'usuario_telefone',
   usuario_senha: 'usuario_senha',
   usuario_cpf: 'usuario_cpf',
@@ -184,12 +184,12 @@ exports.Prisma.imoveisOrderByRelevanceFieldEnum = {
   imovel_descricao: 'imovel_descricao',
   imovel_imagem: 'imovel_imagem',
   imovel_contato1: 'imovel_contato1',
-  imovel_contado2: 'imovel_contado2'
+  imovel_contato2: 'imovel_contato2'
 };
 
 exports.Prisma.usuariosOrderByRelevanceFieldEnum = {
   usuario_nome: 'usuario_nome',
-  Usuario_email: 'Usuario_email',
+  usuario_email: 'usuario_email',
   usuario_telefone: 'usuario_telefone',
   usuario_senha: 'usuario_senha',
   usuario_cpf: 'usuario_cpf',
