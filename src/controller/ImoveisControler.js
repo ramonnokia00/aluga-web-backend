@@ -7,7 +7,6 @@ const prisma = new PrismaClient();
  */
 async function buscarImoveis(filtros = {}) {
     try {
-        console.log('Filtros recebidos:', filtros); // Adicione este log para depuração
         const where = {};
 
         if (filtros.imovel_cidade) where.imovel_cidade = filtros.imovel_cidade;
@@ -26,6 +25,8 @@ async function buscarImoveis(filtros = {}) {
             if (filtros.precoMin) where.imovel_valor.gte = Number(filtros.precoMin);
             if (filtros.precoMax) where.imovel_valor.lte = Number(filtros.precoMax);
         }
+
+        console.log('Filtro final:', where);
 
         return await prisma.imoveis.findMany({ where });
     } catch (error) {
@@ -91,6 +92,10 @@ async function deletarImovel(id) {
             mensagem: error.message
         };
     }
+}
+
+async function teste() {
+    return await prisma.imoveis.findMany()
 }
 
 module.exports = {
