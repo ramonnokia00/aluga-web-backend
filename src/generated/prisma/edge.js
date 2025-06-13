@@ -187,7 +187,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\emmanuelpereira0471\\Documents\\aluga-web-backend\\src\\generated\\prisma",
+      "value": "C:\\Users\\emmanuelpereira0471\\Documents\\aluga-web-backend\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -215,7 +215,6 @@ const config = {
     "db"
   ],
   "activeProvider": "mysql",
-  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {

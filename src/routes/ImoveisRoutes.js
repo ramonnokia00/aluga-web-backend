@@ -11,14 +11,12 @@ router.get("/", async (req, res) => {
 
 });
 
-// Buscar um imóvel pelo ID (GET /imoveis/:id)
-router.get("/:id", async (req, res) => {
+router.get('/imoveis/:id', async (req, res) => {
     const resultado = await imoveisController.buscarUmImovel(req.params.id);
     res.json(resultado);
 });
 
-// Criar imóvel (POST /imoveis)
-router.post("/", async (req, res) => {
+router.post('/imoveis', async (req, res) => {
     const resultado = await imoveisController.criarImovel(req.body);
     res.json(resultado);
 });
@@ -34,8 +32,7 @@ router.put("/:id", async (req, res) => {
     res.json(resultado);
 });
 
-// Deletar imóvel (DELETE /imoveis/:id)
-router.delete("/:id", async (req, res) => {
+router.delete('/imoveis/:id', async (req, res) => {
     const resultado = await imoveisController.deletarImovel(req.params.id);
     res.json(resultado);
 });

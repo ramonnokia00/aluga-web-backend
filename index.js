@@ -5,7 +5,6 @@ const port = 8000;
 
 const imoveisRoutes = require("./src/routes/ImoveisRoutes");
 
-
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -25,5 +24,5 @@ app.use((req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`servidor de pe http://localhost:${port}`)
+    console.log(`servidor de pe http://localhost:${port}`);
 });
