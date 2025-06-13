@@ -1,13 +1,14 @@
 const express = require("express");
+const imoveisController = require('../controller/ImoveisControler');
+const { buscarImoveis } = require("../controller/ImoveisControler");
 const router = express.Router();
-const imoveisController = require("../controller/ImoveisControler");
+
 
 // Buscar imóveis com filtros (GET /imoveis?cidade=...&tipo=...&quartos=...)
 router.get("/", async (req, res) => {
-    // const filtros = req.query;
-    // const resultado = await imoveisController.buscarImoveis(filtros);
-    // res.json(resultado);
-    res.send(await imoveisController.teste())
+    const resultado = await buscarImoveis();
+    res.json(resultado);
+
 });
 
 // Buscar um imóvel pelo ID (GET /imoveis/:id)
@@ -19,6 +20,11 @@ router.get("/:id", async (req, res) => {
 // Criar imóvel (POST /imoveis)
 router.post("/", async (req, res) => {
     const resultado = await imoveisController.criarImovel(req.body);
+    res.json(resultado);
+});
+
+router.post('/imoveis', async (req, res) => {
+    const resultado = await imoveisController.criarImovelComImagem(req);
     res.json(resultado);
 });
 

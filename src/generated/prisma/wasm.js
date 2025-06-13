@@ -146,7 +146,7 @@ exports.Prisma.ImoveisScalarFieldEnum = {
   imovel_imagem: 'imovel_imagem',
   imovel_area: 'imovel_area',
   imovel_contato1: 'imovel_contato1',
-  imovel_contado2: 'imovel_contado2'
+  imovel_contato2: 'imovel_contato2'
 };
 
 exports.Prisma.UsuariosScalarFieldEnum = {
@@ -184,7 +184,7 @@ exports.Prisma.imoveisOrderByRelevanceFieldEnum = {
   imovel_descricao: 'imovel_descricao',
   imovel_imagem: 'imovel_imagem',
   imovel_contato1: 'imovel_contato1',
-  imovel_contado2: 'imovel_contado2'
+  imovel_contato2: 'imovel_contato2'
 };
 
 exports.Prisma.usuariosOrderByRelevanceFieldEnum = {

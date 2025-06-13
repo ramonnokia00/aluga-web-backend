@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require('path');
 const app = express()
 const port = 8000;
 
@@ -13,6 +14,12 @@ app.get("/", (req, res) => {
 
 app.use("/imoveis", imoveisRoutes);
 
+
+// ...outros middlewares...
+
+app.use('/files/imoveis', express.static(path.join(__dirname, 'src/uploads/imoveis')));
+
+// ...suas rotas e exportação do app...
 app.use((req, res) => {
     res.status(404).send("Rota nao encontrada")
 });
