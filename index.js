@@ -1,12 +1,12 @@
-const express = require("express");
+const express = require('express');
+const cors = require('cors');
+const usuarioRoutes = require('./src/routes/UsuariosRoutes');
+
 const app = express();
-const port = 8000;
+app.use(cors());
+// NÃO coloque app.use(express.json()) antes do multer para rotas com upload!
+app.use(usuarioRoutes);
 
-const imoveisRoutes = require("./src/routes/ImoveisRoutes");
-
-app.use(express.json());
-app.use("/", imoveisRoutes);
-
-app.listen(port, () => {
-    console.log(`servidor de pe http://localhost:${port}`);
+app.listen(8000, () => {
+    console.log('Servidor de pé: http://localhost:8000');
 });

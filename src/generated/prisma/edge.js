@@ -187,7 +187,6 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\emmanuelpereira0471\\Documents\\aluga-web-backend\\generated\\prisma",
       "value": "C:\\Users\\admin\\Documents\\EB DEV\\Trabalho\\aluga-web-backend\\src\\generated\\prisma",
       "fromEnvVar": null
     },
@@ -202,7 +201,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\emmanuelpereira0471\\Documents\\aluga-web-backend\\prisma\\schema.prisma",
+    "sourceFilePath": "C:\\Users\\admin\\Documents\\EB DEV\\Trabalho\\aluga-web-backend\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -216,6 +215,7 @@ const config = {
     "db"
   ],
   "activeProvider": "mysql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
