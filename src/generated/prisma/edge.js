@@ -187,7 +187,11 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
+<<<<<<< HEAD
       "value": "C:\\Users\\admin\\Documents\\EB DEV\\Trabalho\\aluga-web-backend\\src\\generated\\prisma",
+=======
+      "value": "C:\\Users\\emmanuelpereira0471\\Documents\\aluga-web-backend\\generated\\prisma",
+>>>>>>> 868f02da39f4da654efa1c27af3d05845d492c47
       "fromEnvVar": null
     },
     "config": {
