@@ -61,7 +61,7 @@ async function editarUsuario(id,dados) {
             mensagem: error.message
         }
         
-    }
+    };
 }
 
 async function apagarUsuario(id) {
