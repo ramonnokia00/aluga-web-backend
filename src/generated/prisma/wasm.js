@@ -152,7 +152,7 @@ exports.Prisma.ImoveisScalarFieldEnum = {
 exports.Prisma.UsuariosScalarFieldEnum = {
   usuario_id: 'usuario_id',
   usuario_nome: 'usuario_nome',
-  usuario_email: 'usuario_email',
+  Usuario_email: 'Usuario_email',
   usuario_telefone: 'usuario_telefone',
   usuario_senha: 'usuario_senha',
   usuario_cpf: 'usuario_cpf',
@@ -189,7 +189,7 @@ exports.Prisma.imoveisOrderByRelevanceFieldEnum = {
 
 exports.Prisma.usuariosOrderByRelevanceFieldEnum = {
   usuario_nome: 'usuario_nome',
-  usuario_email: 'usuario_email',
+  Usuario_email: 'Usuario_email',
   usuario_telefone: 'usuario_telefone',
   usuario_senha: 'usuario_senha',
   usuario_cpf: 'usuario_cpf',
