@@ -16,11 +16,13 @@ router.get("/:id", async (req, res) => {
 });
 
 // Criar imóvel (POST /imoveis)
-router.post("/", async (req, res) => {
-    const resultado = await imoveisController.criarImovel(req.body);
+
+
+const upload = require("../services/multerConfigimovel");
+router.post("/", upload.array("imagens"), async (req, res) => {
+    const resultado = await imoveisController.criarImovel(req.body, req.files);
     res.json(resultado);
 });
-
 // Editar imóvel (PUT /imoveis/:id)
 router.put("/:id", async (req, res) => {
     const resultado = await imoveisController.editarImovel(req.params.id, req.body);

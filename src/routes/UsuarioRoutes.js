@@ -1,6 +1,6 @@
 const { criarUsuario, buscarUsuarios, buscarUmUsuario, apagarUsuario, editarUsuario } = require("../controller/UsuariosControler");
 const { executarSQL } = require("../services");
-const upload = require("../services/multerConfig");
+const upload = require("../services/multerConfigusuario");
 
 const router = require("express").Router();
 router.get("/", async (req, res) => {

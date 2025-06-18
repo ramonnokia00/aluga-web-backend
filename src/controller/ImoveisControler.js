@@ -47,14 +47,13 @@ async function buscarUmImovel(id) {
 }
 
 // Cria um novo imóvel
-async function criarImovel(dados) {
+async function criarImovel(dados, arquivos) {
     try {
-        // Garante que o campo de imagem seja salvo corretamente
-        if (dados.imovel_imagem && !dados.imovel_imagem.startsWith('/uploads')) {
-            dados.imovel_imagem = `/uploads/imoveis/${dados.imovel_imagem}`;
-        }
-        // Se não vier imagem, usa uma imagem fake padrão
-        if (!dados.imovel_imagem) {
+        // Se vier arquivos, use o primeiro como imagem principal
+        if (arquivos && arquivos.length > 0) {
+            dados.imovel_imagem = `/uploads/imoveis/${arquivos[0].filename}`;
+        } else if (!dados.imovel_imagem) {
+            // Se não vier imagem, usa uma imagem fake padrão
             dados.imovel_imagem = 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80';
         }
         const imovelCriado = await prisma.imoveis.create({
